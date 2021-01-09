@@ -16,7 +16,8 @@ const String _soybeanOilApiKey=ApiGoogleSheetKey.soybeanOilApiKey;
 const String _sunflowerOil=ApiGoogleSheetKey.sunflowerOilApiKey;
 void main() async {
   ApiTraderPriceTable apiTraderPriceTable =
-  await GetTableService().getTable(_soybeanOilApiKey);
+  await GetTableService().getTable(_sunflowerOil);
+  print(apiTraderPriceTable.date);
   print(apiTraderPriceTable.listProducts);
 
 }

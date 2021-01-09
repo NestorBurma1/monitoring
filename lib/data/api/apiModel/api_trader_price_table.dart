@@ -8,7 +8,7 @@ class ApiTraderPriceTable {
   final List<String> listComments;
 
   ApiTraderPriceTable.fromApi(Map<String, dynamic> map)
-      : date = DateTime.parse(map['data'][0]['dateAndTraderName']['date']),
+      : date = DateTime.parse(map['data'][0]['dateAndTraderName']['date']).toLocal(),
         traderName = map['data'][0]['dateAndTraderName']['traderName'],
         listMonth = _getListStringsListMonth(map['data'][2]['listMonth']),
         listProducts = _getListProductFromMap(map['data'][3]['listProducts']),
