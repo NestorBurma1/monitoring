@@ -8,12 +8,12 @@ class ApiTraderPriceTable {
   final List<String> listComments;
 
   ApiTraderPriceTable.fromApi(Map<String, dynamic> map)
-      : date = DateTime.parse(map['data'][0]['dateAndTraderName']['date']).toLocal(),
-        traderName = map['data'][0]['dateAndTraderName']['traderName'],
-        listMonth = _getListStringsListMonth(map['data'][2]['listMonth']),
-        listProducts = _getListProductFromMap(map['data'][3]['listProducts']),
-        listComments = map['data'].length>4 ?
-            _getListStringsListComments(map['data'][4]['listComments']): null;
+      : date = DateTime.parse(map['data0'][0]['dateAndTraderName']['date']).toLocal(),
+        traderName = map['data0'][0]['dateAndTraderName']['traderName'],
+        listMonth = _getListStringsListMonth(map['data0'][2]['listMonth']),
+        listProducts = _getListProductFromMap(map['data0'][3]['listProducts']),
+        listComments = map['data0'].length>4 ?
+            _getListStringsListComments(map['data0'][4]['listComments']): null;
 }
 
 List<String> _getListStringsListMonth(List<dynamic> map) {
@@ -21,7 +21,7 @@ List<String> _getListStringsListMonth(List<dynamic> map) {
   map.forEach((value) {
     if (value != null) {
       value.forEach((key, data) {
-        return _listMonth.add(data);
+        return _listMonth.add(data.toString());
       });
     }
     return _listMonth;
@@ -163,11 +163,11 @@ String _splitOrNull(String str) {
     return null;
 }
 
-List<String> _getListStringsListComments(List<String> list) {
+List<String> _getListStringsListComments(List<dynamic> list) {
   List<String> _listMonth = [];
-  if(list.isNotEmpty) {
+  if(list != null) {
     list.forEach((value) {
-      if (value != null) return _listMonth.add(value);
+      if (value != null) return _listMonth.add(value.toString());
     });
     return _listMonth;
   }
