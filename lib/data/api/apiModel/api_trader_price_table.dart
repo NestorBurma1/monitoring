@@ -7,13 +7,13 @@ class ApiTraderPriceTable {
   final List<Product> listProducts;
   final List<String> listComments;
 
-  ApiTraderPriceTable.fromApi(Map<String, dynamic> map)
-      : date = DateTime.parse(map['data0'][0]['dateAndTraderName']['date']).toLocal(),
-        traderName = map['data0'][0]['dateAndTraderName']['traderName'],
-        listMonth = _getListStringsListMonth(map['data0'][2]['listMonth']),
-        listProducts = _getListProductFromMap(map['data0'][3]['listProducts']),
-        listComments = map['data0'].length>4 ?
-            _getListStringsListComments(map['data0'][4]['listComments']): null;
+  ApiTraderPriceTable.fromApi(Map<String, dynamic> map, int index)
+      : date = DateTime.parse(map['data$index'][0]['dateAndTraderName']['date']).toLocal(),
+        traderName = map['data$index'][0]['dateAndTraderName']['traderName'],
+        listMonth = _getListStringsListMonth(map['data$index'][2]['listMonth']),
+        listProducts = _getListProductFromMap(map['data$index'][3]['listProducts']),
+        listComments = map['data$index'].length>4 ?
+            _getListStringsListComments(map['data$index'][4]['listComments']): null;
 }
 
 List<String> _getListStringsListMonth(List<dynamic> map) {

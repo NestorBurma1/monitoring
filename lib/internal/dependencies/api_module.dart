@@ -1,5 +1,5 @@
 import 'package:monitoring/data/api/api_util.dart';
-import 'package:monitoring/data/api/service/get_table_service.dart';
+import 'package:monitoring/data/api/service/get_list_table_service.dart';
 
 class ApiModule{
   static ApiUtil _apiUtil;
