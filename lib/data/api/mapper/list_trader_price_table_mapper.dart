@@ -1,5 +1,5 @@
 import 'package:monitoring/data/api/apiModel/api_trader_price_table.dart';
-import 'package:monitoring/domain/model/trader_price_table.dart';
+import 'package:monitoring/domain/gettraderlistbloc/model/trader_price_table.dart';
 
 class TraderPriceTableMapper {
   static List<TraderPriceTable> fromAPi({List<ApiTraderPriceTable> lisApiTable}) {

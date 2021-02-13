@@ -1,5 +1,5 @@
 import 'package:monitoring/data/api/repository/list_trader_price_table_data_repository.dart';
-import 'package:monitoring/domain/repository/trader_price_repository.dart';
+import 'package:monitoring/domain/gettraderlistbloc/repository/trader_price_repository.dart';
 import 'package:monitoring/internal/dependencies/api_module.dart';
 
 class RepositoryModule{

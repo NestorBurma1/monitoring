@@ -1,4 +1,4 @@
-import 'package:monitoring/domain/repository/model/product.dart';
+import 'package:monitoring/domain/gettraderlistbloc/repository/model/product.dart';
 
 class ApiTraderPriceTable {
   final DateTime date;

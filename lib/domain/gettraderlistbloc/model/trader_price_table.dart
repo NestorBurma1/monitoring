@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:monitoring/domain/repository/model/product.dart';
+import 'package:monitoring/domain/gettraderlistbloc/repository/model/product.dart';
+
+
 
 part 'trader_price_table.freezed.dart';
 
